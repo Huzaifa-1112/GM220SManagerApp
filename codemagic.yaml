@@ -1,0 +1,11 @@
+workflows:
+  android-build:
+    name: GM220S APK Build
+    instance_type: linux_x2
+    scripts:
+      - name: Build Debug APK
+        script: |
+          chmod +x gradlew
+          ./gradlew assembleDebug
+    artifacts:
+      - app/build/outputs/apk/debug/app-debug.apk
